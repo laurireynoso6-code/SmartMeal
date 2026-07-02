@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Laureano Reynoso Ceccarini">
+    <meta name="description"
+        content="SmartMeal es un prototipo web para organizar alimentos, descubrir recetas y planificar comidas.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartMeal | Alimentación inteligente</title>
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Íconos -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#contenido-principal">
+        Ir al contenido principal
+    </a>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="contenedor">
+
+            <nav class="navbar" aria-label="Menú principal">
+
+                <a href="index.html" class="marca" aria-label="SmartMeal - Inicio">
+
+                    <span class="marca-icono">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </span>
+
+                    <span class="marca-texto">
+                        Smart<span>Meal</span>
+                    </span>
+
+                </a>
+
+                <button class="menu-toggle" type="button" aria-label="Abrir menú"
+                    aria-controls="menu-principal" aria-expanded="false">
+
+                    <i class="bi bi-list"></i>
+
+                </button>
+
+                <ul class="nav-links" id="menu-principal">
+
+                    <li>
+                        <a class="nav-activo" href="index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pages/recetas.html">
+                            Recetas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pages/alimentos.html">
+                            Mis alimentos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pages/planes.html">
+                            Planes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pages/contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
+
+    <main id="contenido-principal">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="contenedor hero-contenido">
+
+                <div class="hero-texto">
+
+                    <span class="etiqueta">
+                        <i class="bi bi-stars"></i>
+                        Alimentación simple y organizada
+                    </span>
+
+                    <h1>
+                        Comé mejor.
+                        <span>Organizate fácil.</span>
+                    </h1>
+
+                    <p>
+                        SmartMeal te ayuda a organizar los alimentos que tenés
+                        en casa, encontrar recetas y planificar tus comidas
+                        durante toda la semana.
+                    </p>
+
+                    <div class="hero-botones">
+
+                        <a href="pages/recetas.html" class="boton boton-principal">
+                            <i class="bi bi-journal-text"></i>
+                            Explorar recetas
+                        </a>
+
+                        <a href="pages/planes.html" class="boton boton-secundario">
+                            Ver planes
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                    <p class="hero-nota">
+                        <i class="bi bi-check-circle-fill"></i>
+                        Prototipo académico de SmartMeal.
+                    </p>
+
+                </div>
+
+                <div class="hero-visual">
+
+                    <div class="logo-panel">
+
+                        <img src="img/logos/smartmeal-logo.png"
+                            alt="Logo de SmartMeal con una manzana y un tenedor">
+
+                    </div>
+
+                    <div class="tarjeta-flotante tarjeta-recetas">
+
+                        <i class="bi bi-journal-richtext"></i>
+
+                        <div>
+                            <strong>500+</strong>
+                            <span>recetas disponibles</span>
+                        </div>
+
+                    </div>
+
+                    <div class="tarjeta-flotante tarjeta-plan">
+
+                        <i class="bi bi-calendar-check"></i>
+
+                        <div>
+                            <strong>Plan semanal</strong>
+                            <span>Organizá tus comidas</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FUNCIONES -->
+
+        <section class="seccion funciones">
+
+            <div class="contenedor">
+
+                <div class="encabezado-seccion">
+
+                    <span class="subtitulo-seccion">
+                        Todo en un solo lugar
+                    </span>
+
+                    <h2>
+                        Herramientas para una alimentación más simple
+                    </h2>
+
+                    <p>
+                        SmartMeal reúne las funciones principales que necesitás
+                        para aprovechar mejor tus alimentos y organizar tu semana.
+                    </p>
+
+                </div>
+
+                <div class="grid-funciones">
+
+                    <article class="card-funcion">
+
+                        <div class="icono-funcion">
+                            <i class="bi bi-basket2-fill"></i>
+                        </div>
+
+                        <h3>Mis alimentos</h3>
+
+                        <p>
+                            Registrá los ingredientes disponibles en tu hogar
+                            y organizalos por categorías.
+                        </p>
+
+                        <a href="pages/alimentos.html">
+                            Ver alimentos
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+                    <article class="card-funcion">
+
+                        <div class="icono-funcion">
+                            <i class="bi bi-book-fill"></i>
+                        </div>
+
+                        <h3>Recetas prácticas</h3>
+
+                        <p>
+                            Descubrí ideas para cocinar utilizando alimentos
+                            que ya tenés disponibles.
+                        </p>
+
+                        <a href="pages/recetas.html">
+                            Ver recetas
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+                    <article class="card-funcion">
+
+                        <div class="icono-funcion">
+                            <i class="bi bi-calendar2-week-fill"></i>
+                        </div>
+
+                        <h3>Planes semanales</h3>
+
+                        <p>
+                            Planificá desayunos, almuerzos y cenas para
+                            mejorar tu organización diaria.
+                        </p>
+
+                        <a href="pages/planes.html">
+                            Ver planes
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CÓMO FUNCIONA -->
+
+        <section class="seccion como-funciona">
+
+            <div class="contenedor">
+
+                <div class="encabezado-seccion">
+
+                    <span class="subtitulo-seccion">
+                        Paso a paso
+                    </span>
+
+                    <h2>
+                        Organizar tus comidas es muy fácil
+                    </h2>
+
+                </div>
+
+                <ol class="lista-pasos">
+
+                    <li class="paso">
+
+                        <span class="numero-paso">01</span>
+
+                        <div class="contenido-paso">
+
+                            <h3>Registrá tus alimentos</h3>
+
+                            <p>
+                                Agregá los productos que tenés en tu casa,
+                                como frutas, verduras, carnes o lácteos.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                    <li class="paso">
+
+                        <span class="numero-paso">02</span>
+
+                        <div class="contenido-paso">
+
+                            <h3>Encontrá una receta</h3>
+
+                            <p>
+                                Explorá recetas simples y elegí una opción
+                                según tus ingredientes disponibles.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                    <li class="paso">
+
+                        <span class="numero-paso">03</span>
+
+                        <div class="contenido-paso">
+
+                            <h3>Planificá tu semana</h3>
+
+                            <p>
+                                Organizá tus comidas para ahorrar tiempo,
+                                evitar desperdicios y comer mejor.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+            </div>
+
+        </section>
+
+        <!-- ESTADÍSTICAS -->
+
+        <section class="estadisticas">
+
+            <div class="contenedor grid-estadisticas">
+
+                <div class="dato-estadistica">
+
+                    <strong>500+</strong>
+                    <span>Recetas sugeridas</span>
+
+                </div>
+
+                <div class="dato-estadistica">
+
+                    <strong>1.200+</strong>
+                    <span>Usuarios ficticios</span>
+
+                </div>
+
+                <div class="dato-estadistica">
+
+                    <strong>30+</strong>
+                    <span>Planes disponibles</span>
+
+                </div>
+
+                <div class="dato-estadistica">
+
+                    <strong>100%</strong>
+                    <span>Prototipo académico</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CTA FINAL -->
+
+        <section class="seccion">
+
+            <div class="contenedor">
+
+                <div class="cta-final">
+
+                    <div>
+
+                        <span class="subtitulo-seccion">
+                            Empezá hoy
+                        </span>
+
+                        <h2>
+                            Tu próxima comida puede ser más simple.
+                        </h2>
+
+                        <p>
+                            Conocé recetas, organizá tus alimentos y creá
+                            un plan semanal adaptado a tu rutina.
+                        </p>
+
+                    </div>
+
+                    <a href="pages/contacto.html" class="boton boton-principal">
+                        Contactanos
+                        <i class="bi bi-send-fill"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="contenedor footer-grid">
+
+            <div class="footer-marca">
+
+                <a href="index.html" class="marca">
+
+                    <span class="marca-icono">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </span>
+
+                    <span class="marca-texto">
+                        Smart<span>Meal</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Organiza mejor tus alimentos, aprovechá lo que ya tenés
+                    y planificá comidas más simples.
+                </p>
+
+            </div>
+
+            <div class="footer-columna">
+
+                <h3>Explorar</h3>
+
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="pages/recetas.html">Recetas</a></li>
+                    <li><a href="pages/alimentos.html">Mis alimentos</a></li>
+                    <li><a href="pages/planes.html">Planes</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-columna">
+
+                <h3>Contacto</h3>
+
+                <ul>
+                    <li>
+                        <a href="pages/contacto.html">Escribinos</a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:contacto@smartmeal.com">
+                            contacto@smartmeal.com
+                        </a>
+                    </li>
+
+                    <li>
+                        Mendoza, Argentina
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="footer-columna">
+
+                <h3>Seguinos</h3>
+
+                <div class="redes-sociales">
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="Twitter">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-inferior">
+
+            <p>
+                © 2026 SmartMeal · Proyecto académico de Desarrollo de Software.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

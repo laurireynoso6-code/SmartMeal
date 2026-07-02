@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Laureano Reynoso Ceccarini">
+    <meta name="description"
+        content="Planes alimenticios ficticios dentro del prototipo SmartMeal.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartMeal | Planes alimenticios</title>
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Íconos -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#contenido-principal">
+        Ir al contenido principal
+    </a>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="contenedor">
+
+            <nav class="navbar" aria-label="Menú principal">
+
+                <a href="../index.html" class="marca" aria-label="SmartMeal - Inicio">
+
+                    <span class="marca-icono">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </span>
+
+                    <span class="marca-texto">
+                        Smart<span>Meal</span>
+                    </span>
+
+                </a>
+
+                <button class="menu-toggle" type="button" aria-label="Abrir menú"
+                    aria-controls="menu-principal" aria-expanded="false">
+
+                    <i class="bi bi-list"></i>
+
+                </button>
+
+                <ul class="nav-links" id="menu-principal">
+
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="recetas.html">Recetas</a></li>
+                    <li><a href="alimentos.html">Mis alimentos</a></li>
+                    <li><a class="nav-activo" href="planes.html">Planes</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main id="contenido-principal">
+
+        <!-- ENCABEZADO -->
+
+        <section class="encabezado-pagina">
+
+            <div class="contenedor">
+
+                <nav class="migas-pan" aria-label="Ruta de navegación">
+
+                    <a href="../index.html">Inicio</a>
+
+                    <i class="bi bi-chevron-right"></i>
+
+                    <span>Planes</span>
+
+                </nav>
+
+                <span class="etiqueta">
+                    <i class="bi bi-calendar2-week-fill"></i>
+                    Planificación semanal
+                </span>
+
+                <h1>
+                    Planificá tus comidas de acuerdo con tu rutina
+                </h1>
+
+                <p>
+                    Elegí un plan orientativo para organizar desayunos,
+                    almuerzos y cenas de manera práctica durante la semana.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- PLANES DISPONIBLES -->
+
+        <section class="seccion planes-disponibles">
+
+            <div class="contenedor">
+
+                <div class="encabezado-seccion">
+
+                    <span class="subtitulo-seccion">
+                        Opciones sugeridas
+                    </span>
+
+                    <h2>
+                        Elegí el plan que mejor se adapta a vos
+                    </h2>
+
+                    <p>
+                        Estos planes son ejemplos ficticios para mostrar cómo
+                        podría funcionar SmartMeal dentro de una aplicación real.
+                    </p>
+
+                </div>
+
+                <div class="grid-planes">
+
+                    <!-- PLAN 1 -->
+
+                    <article class="card-plan">
+
+                        <div class="plan-icono plan-equilibrado">
+
+                            <i class="bi bi-heart-pulse-fill"></i>
+
+                        </div>
+
+                        <span class="tipo-plan">
+                            Para todos los días
+                        </span>
+
+                        <h3>Plan equilibrado</h3>
+
+                        <p class="descripcion-plan">
+                            Una propuesta variada para quienes buscan comer de
+                            manera organizada y saludable.
+                        </p>
+
+                        <ul class="lista-beneficios">
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Desayuno, almuerzo y cena
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Recetas simples y caseras
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Ingredientes fáciles de conseguir
+                            </li>
+
+                        </ul>
+
+                        <a href="#plan-semanal" class="boton-plan">
+                            Ver ejemplo
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+                    <!-- PLAN 2 -->
+
+                    <article class="card-plan plan-destacado">
+
+                        <span class="etiqueta-destacada">
+                            Recomendado
+                        </span>
+
+                        <div class="plan-icono plan-rapido">
+
+                            <i class="bi bi-lightning-charge-fill"></i>
+
+                        </div>
+
+                        <span class="tipo-plan">
+                            Para días ocupados
+                        </span>
+
+                        <h3>Plan rápido</h3>
+
+                        <p class="descripcion-plan">
+                            Ideal para personas con poco tiempo que necesitan
+                            comidas prácticas durante su jornada.
+                        </p>
+
+                        <ul class="lista-beneficios">
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Preparaciones de hasta 30 minutos
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Menú semanal simplificado
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Ideas para aprovechar sobras
+                            </li>
+
+                        </ul>
+
+                        <a href="#plan-semanal" class="boton-plan boton-plan-destacado">
+                            Elegir plan
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+                    <!-- PLAN 3 -->
+
+                    <article class="card-plan">
+
+                        <div class="plan-icono plan-activo">
+
+                            <i class="bi bi-activity"></i>
+
+                        </div>
+
+                        <span class="tipo-plan">
+                            Para una rutina activa
+                        </span>
+
+                        <h3>Plan deportivo</h3>
+
+                        <p class="descripcion-plan">
+                            Una propuesta con comidas completas para acompañar
+                            días de estudio, trabajo o ejercicio.
+                        </p>
+
+                        <ul class="lista-beneficios">
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Opciones con proteínas
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Colaciones entre comidas
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Menú adaptable a la semana
+                            </li>
+
+                        </ul>
+
+                        <a href="#plan-semanal" class="boton-plan">
+                            Ver ejemplo
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PLAN SEMANAL -->
+
+        <section class="seccion seccion-plan-semanal" id="plan-semanal">
+
+            <div class="contenedor">
+
+                <div class="cabecera-plan-semanal">
+
+                    <div>
+
+                        <span class="subtitulo-seccion">
+                            Ejemplo de planificación
+                        </span>
+
+                        <h2>
+                            Plan rápido para una semana organizada
+                        </h2>
+
+                    </div>
+
+                    <a href="recetas.html" class="boton boton-secundario">
+                        <i class="bi bi-book-fill"></i>
+                        Ver recetas
+                    </a>
+
+                </div>
+
+                <div class="tabla-plan">
+
+                    <div class="fila-plan encabezado-tabla">
+
+                        <span>Día</span>
+                        <span>Desayuno</span>
+                        <span>Almuerzo</span>
+                        <span>Cena</span>
+
+                    </div>
+
+                    <div class="fila-plan">
+
+                        <strong>Lunes</strong>
+
+                        <span>
+                            <i class="bi bi-sun-fill"></i>
+                            Tostadas con palta
+                        </span>
+
+                        <span>
+                            <i class="bi bi-bowl-hot-fill"></i>
+                            Pasta con vegetales
+                        </span>
+
+                        <span>
+                            <i class="bi bi-moon-stars-fill"></i>
+                            Wok de verduras
+                        </span>
+
+                    </div>
+
+                    <div class="fila-plan">
+
+                        <strong>Martes</strong>
+
+                        <span>
+                            <i class="bi bi-sun-fill"></i>
+                            Yogur con frutas
+                        </span>
+
+                        <span>
+                            <i class="bi bi-bowl-hot-fill"></i>
+                            Ensalada con pollo
+                        </span>
+
+                        <span>
+                            <i class="bi bi-moon-stars-fill"></i>
+                            Tortilla al horno
+                        </span>
+
+                    </div>
+
+                    <div class="fila-plan">
+
+                        <strong>Miércoles</strong>
+
+                        <span>
+                            <i class="bi bi-sun-fill"></i>
+                            Avena con banana
+                        </span>
+
+                        <span>
+                            <i class="bi bi-bowl-hot-fill"></i>
+                            Arroz con verduras
+                        </span>
+
+                        <span>
+                            <i class="bi bi-moon-stars-fill"></i>
+                            Omelette de espinaca
+                        </span>
+
+                    </div>
+
+                    <div class="fila-plan">
+
+                        <strong>Jueves</strong>
+
+                        <span>
+                            <i class="bi bi-sun-fill"></i>
+                            Tostadas integrales
+                        </span>
+
+                        <span>
+                            <i class="bi bi-bowl-hot-fill"></i>
+                            Pollo con ensalada
+                        </span>
+
+                        <span>
+                            <i class="bi bi-moon-stars-fill"></i>
+                            Sopa de verduras
+                        </span>
+
+                    </div>
+
+                    <div class="fila-plan">
+
+                        <strong>Viernes</strong>
+
+                        <span>
+                            <i class="bi bi-sun-fill"></i>
+                            Yogur y granola
+                        </span>
+
+                        <span>
+                            <i class="bi bi-bowl-hot-fill"></i>
+                            Wrap de pollo
+                        </span>
+
+                        <span>
+                            <i class="bi bi-moon-stars-fill"></i>
+                            Pizza casera vegetal
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONSEJO -->
+
+        <section class="seccion">
+
+            <div class="contenedor">
+
+                <article class="consejo-plan">
+
+                    <div class="consejo-icono">
+
+                        <i class="bi bi-lightbulb-fill"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span class="subtitulo-seccion">
+                            Consejo SmartMeal
+                        </span>
+
+                        <h2>
+                            Planificar no significa comer siempre lo mismo.
+                        </h2>
+
+                        <p>
+                            Podés cambiar una receta por otra similar, adaptar
+                            las porciones y aprovechar los alimentos que ya
+                            tenés en tu inventario.
+                        </p>
+
+                    </div>
+
+                    <a href="alimentos.html" class="boton boton-principal">
+                        Ver mis alimentos
+                        <i class="bi bi-basket2-fill"></i>
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="contenedor footer-grid">
+
+            <div class="footer-marca">
+
+                <a href="../index.html" class="marca">
+
+                    <span class="marca-icono">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </span>
+
+                    <span class="marca-texto">
+                        Smart<span>Meal</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Organiza mejor tus alimentos, aprovechá lo que ya tenés
+                    y planificá comidas más simples.
+                </p>
+
+            </div>
+
+            <div class="footer-columna">
+
+                <h3>Explorar</h3>
+
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="recetas.html">Recetas</a></li>
+                    <li><a href="alimentos.html">Mis alimentos</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-columna">
+
+                <h3>Contacto</h3>
+
+                <ul>
+                    <li><a href="contacto.html">Escribinos</a></li>
+                    <li>
+                        <a href="mailto:contacto@smartmeal.com">
+                            contacto@smartmeal.com
+                        </a>
+                    </li>
+                    <li>Mendoza, Argentina</li>
+                </ul>
+
+            </div>
+
+            <div class="footer-columna">
+
+                <h3>Seguinos</h3>
+
+                <div class="redes-sociales">
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="Twitter">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-inferior">
+
+            <p>
+                © 2026 SmartMeal · Proyecto académico de Desarrollo de Software.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
