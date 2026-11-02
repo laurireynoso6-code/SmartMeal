@@ -2,7 +2,7 @@
 # ==================================================
 # SMARTMEAL 2.0
 # MODELOS DE BASE DE DATOS
-# Parcial N° 2 - Práctica Profesionalizante I
+# Practica Profesionalizante I
 # ==================================================
 
 from pathlib import Path
@@ -16,39 +16,39 @@ from peewee import (
     DecimalField,
     DateTimeField,
     DateField,
-    ForeignKeyField
+    ForeignKeyField,
+    BooleanField
 )
 
-# ==========================
-# CONFIGURACIÓN
-# ==========================
 
-# Ubicación del proyecto
+# ==========================================
+# CONFIGURACION DE SQLITE
+# ==========================================
+
 BASE_DIR = Path(__file__).resolve().parent
 
-# Carpeta donde guardaremos la base de datos
 DATOS_DIR = BASE_DIR / "datos"
 DATOS_DIR.mkdir(exist_ok=True)
 
-# Base de datos SQLite
 db = SqliteDatabase(
     str(DATOS_DIR / "smartmeal.db"),
     pragmas={"foreign_keys": 1}
 )
 
 
-# ==========================
+# ==========================================
 # MODELO BASE
-# ==========================
+# ==========================================
 
 class ModeloBase(Model):
+
     class Meta:
         database = db
 
 
-# ==========================
-# TABLA DE ALIMENTOS
-# ==========================
+# ==========================================
+# TABLA: ALIMENTOS
+# ==========================================
 
 class Alimento(ModeloBase):
 
@@ -68,9 +68,9 @@ class Alimento(ModeloBase):
     fecha_vencimiento = DateField(null=True)
 
 
-# ==========================
-# TABLA DE COMPRAS
-# ==========================
+# ==========================================
+# TABLA: COMPRAS
+# ==========================================
 
 class Compra(ModeloBase):
 
@@ -94,9 +94,9 @@ class Compra(ModeloBase):
     )
 
 
-# ==========================
-# PRODUCTOS DE CADA COMPRA
-# ==========================
+# ==========================================
+# TABLA: PRODUCTOS DE UNA COMPRA
+# ==========================================
 
 class ProductoCompra(ModeloBase):
 
@@ -123,9 +123,34 @@ class ProductoCompra(ModeloBase):
     )
 
 
-# ==========================
-# CREAR TABLAS
-# ==========================
+# ==========================================
+# TABLA: USUARIOS
+# ==========================================
+
+class Usuario(ModeloBase):
+
+    id = AutoField()
+
+    nombre_usuario = CharField(
+        max_length=50,
+        unique=True
+    )
+
+    # Guardaremos un hash, no la contraseña.
+    password_hash = CharField(
+        max_length=255
+    )
+
+    fecha_creacion = DateTimeField(
+        default=datetime.now
+    )
+
+    activo = BooleanField(default=True)
+
+
+# ==========================================
+# INICIALIZAR BASE DE DATOS
+# ==========================================
 
 def inicializar_base_datos():
 
@@ -135,7 +160,8 @@ def inicializar_base_datos():
             [
                 Alimento,
                 Compra,
-                ProductoCompra
+                ProductoCompra,
+                Usuario
             ],
             safe=True
         )

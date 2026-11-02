@@ -8,6 +8,10 @@
 from pathlib import Path
 from datetime import date
 from decimal import Decimal, InvalidOperation
+from seguridad import configurar_seguridad
+from autenticacion import registrar_autenticacion
+from control_acceso import configurar_control_acceso
+from recomendaciones import registrar_recomendaciones
 
 from flask import (
     Flask,
@@ -37,6 +41,16 @@ app.config["MAX_CONTENT_LENGTH"] = 65536
 
 inicializar_base_datos()
 
+# Activar protecciones del servidor
+limitador = configurar_seguridad(app)
+
+registrar_autenticacion(app, limitador)
+
+configurar_control_acceso(app)
+
+# Activar recomendaciones basadas en el inventario
+registrar_recomendaciones(app)
+
 
 # ==========================================
 # PAGINAS HTML
@@ -53,7 +67,8 @@ PAGINAS = {
     "alimentos.html",
     "planes.html",
     "contacto.html",
-    "compras.html"
+    "compras.html",
+    "login.html"
 }
 
 

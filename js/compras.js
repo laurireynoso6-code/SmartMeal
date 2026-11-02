@@ -349,7 +349,7 @@ formCompra.addEventListener("submit", async function (evento) {
 
     try {
 
-        const respuesta = await fetch("/api/compras", {
+        const respuesta = await fetchSeguro("/api/compras", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -408,7 +408,7 @@ async function cargarHistorial() {
 
     try {
 
-        const respuesta = await fetch("/api/compras");
+        const respuesta = await fetchSeguro("/api/compras");
 
         if (!respuesta.ok) {
             throw new Error("No se pudo cargar el historial.");
@@ -852,7 +852,7 @@ function abrirFormularioInventario(compraId, productoId) {
             };
 
             // Consultar si el mismo alimento ya existe
-            const respuestaInventario = await fetch(
+            const respuestaInventario = await fetchSeguro(
                 "/api/alimentos"
             );
 
@@ -924,7 +924,7 @@ function abrirFormularioInventario(compraId, productoId) {
 
             }
 
-            const respuesta = await fetch(direccion, {
+            const respuesta = await fetchSeguro(direccion, {
 
                 method: metodo,
 
@@ -991,7 +991,7 @@ async function eliminarCompra(id, boton) {
 
     try {
 
-        const respuesta = await fetch(
+        const respuesta = await fetchSeguro(
             `/api/compras/${id}`,
             {
                 method: "DELETE"

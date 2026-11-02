@@ -19,3 +19,4 @@ datos/*.db-wal
 # Archivos temporales del sistema
 .DS_Store
 Thumbs.db
+datos/.secret_key

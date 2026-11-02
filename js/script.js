@@ -180,3 +180,226 @@ if (formularioContacto && mensajeFormulario) {
     });
 
 }
+
+/* ==================================================
+   SMARTMEAL 2.0
+   SOLICITUDES PROTEGIDAS CON CSRF
+================================================== */
+
+async function fetchSeguro(direccion, opciones = {}) {
+
+    const metodo = (
+        opciones.method || "GET"
+    ).toUpperCase();
+
+    const metodosProtegidos = [
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+    ];
+
+    // Las consultas GET no modifican datos,
+    // por lo que no necesitan token CSRF.
+
+    if (!metodosProtegidos.includes(metodo)) {
+
+        return fetch(direccion, opciones);
+
+    }
+
+    // Solo permitimos modificar datos
+    // de nuestra propia API.
+
+    const destino = new URL(
+        direccion,
+        window.location.href
+    );
+
+    if (
+        destino.origin !== window.location.origin ||
+        !destino.pathname.startsWith("/api/")
+    ) {
+
+        throw new Error(
+            "La solicitud no pertenece a SmartMeal."
+        );
+
+    }
+
+    // Consultar el token de seguridad.
+
+    const respuestaToken = await fetch(
+        "/api/csrf-token",
+        {
+            method: "GET",
+            cache: "no-store",
+            credentials: "same-origin"
+        }
+    );
+
+    if (!respuestaToken.ok) {
+
+        throw new Error(
+            "No se pudo obtener el token de seguridad."
+        );
+
+    }
+
+    const datosToken = await respuestaToken.json();
+
+    if (!datosToken.csrf_token) {
+
+        throw new Error(
+            "El servidor no entregó un token válido."
+        );
+
+    }
+
+    // Agregar el token a los encabezados.
+
+    const encabezados = new Headers(
+        opciones.headers || {}
+    );
+
+    encabezados.set(
+        "X-CSRFToken",
+        datosToken.csrf_token
+    );
+
+    // Enviar la solicitud protegida.
+
+    return fetch(direccion, {
+        ...opciones,
+        headers: encabezados,
+        credentials: "same-origin"
+    });
+
+}
+
+/* ==================================================
+   SMARTMEAL 2.0
+   NAVEGACION DE SESION
+================================================== */
+
+async function prepararMenuSesion() {
+
+    const menu = document.querySelector(".nav-links");
+
+    // La pagina de login no tiene este menu
+    if (!menu) {
+        return;
+    }
+
+    // Evitar crear botones duplicados
+    if (document.querySelector("#item-sesion")) {
+        return;
+    }
+
+    const item = document.createElement("li");
+    item.id = "item-sesion";
+
+    const paginaSecundaria = window.location.pathname
+        .split("/")
+        .includes("pages");
+
+    const rutaLogin = paginaSecundaria
+        ? "login.html"
+        : "pages/login.html";
+
+    try {
+
+        const respuesta = await fetch("/api/sesion", {
+            cache: "no-store",
+            credentials: "same-origin"
+        });
+
+        if (!respuesta.ok) {
+            throw new Error(
+                "No se pudo consultar la sesión."
+            );
+        }
+
+        const sesion = await respuesta.json();
+
+        if (sesion.autenticado) {
+
+            // USUARIO CON SESION INICIADA
+
+            const boton = document.createElement("button");
+
+            boton.type = "button";
+            boton.className = "nav-sesion-boton";
+
+            boton.textContent = "Cerrar sesión";
+
+            boton.addEventListener("click", async function () {
+
+                boton.disabled = true;
+                boton.textContent = "Cerrando sesión...";
+
+                try {
+
+                    const respuestaLogout = await fetchSeguro(
+                        "/api/logout",
+                        {
+                            method: "POST"
+                        }
+                    );
+
+                    if (!respuestaLogout.ok) {
+                        throw new Error(
+                            "No se pudo cerrar la sesión."
+                        );
+                    }
+
+                    // Volver al inicio de sesión
+                    window.location.assign(
+                        "/pages/login.html"
+                    );
+
+                } catch (error) {
+
+                    alert(error.message);
+
+                    boton.disabled = false;
+                    boton.textContent = "Cerrar sesión";
+
+                }
+
+            });
+
+            item.appendChild(boton);
+
+        } else {
+
+            // USUARIO SIN SESION INICIADA
+
+            const enlace = document.createElement("a");
+
+            enlace.href = rutaLogin;
+            enlace.textContent = "Iniciar sesión";
+
+            item.appendChild(enlace);
+
+        }
+
+    } catch (error) {
+
+        // Si falla la consulta, mostrar acceso al login
+        const enlace = document.createElement("a");
+
+        enlace.href = rutaLogin;
+        enlace.textContent = "Iniciar sesión";
+
+        item.appendChild(enlace);
+
+    }
+
+    menu.appendChild(item);
+
+}
+
+
+// Ejecutar al abrir cada pagina
+prepararMenuSesion();

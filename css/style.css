@@ -3291,3 +3291,34 @@ textarea {
         align-items: flex-start;
     }
 }
+
+/* ==========================================
+   SMARTMEAL 2.0
+   BOTON CERRAR SESION
+========================================== */
+
+.nav-sesion-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 9px 16px;
+    border: 1px solid #b9dfbe;
+    border-radius: 12px;
+    background: #eaf7ec;
+    color: #2e7d32;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.nav-sesion-boton:hover {
+    background: #d6efda;
+}
+
+.nav-sesion-boton:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
