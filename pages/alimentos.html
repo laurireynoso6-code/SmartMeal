@@ -1,12 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Laureano Reynoso Ceccarini">
-    <meta name="description"
-        content="Inventario ficticio de alimentos disponibles en SmartMeal.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Administrá tus alimentos y sus fechas de vencimiento con SmartMeal.">
 
     <title>SmartMeal | Mis alimentos</title>
 
@@ -14,23 +15,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
-    <!-- Íconos -->
+    <!-- Iconos -->
     <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- CSS -->
+    <!-- Estilos generales y formularios -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/compras.css">
+
 </head>
 
 <body>
-
-    <a class="skip-link" href="#contenido-principal">
-        Ir al contenido principal
-    </a>
 
     <!-- ================= HEADER ================= -->
 
@@ -40,7 +38,7 @@
 
             <nav class="navbar" aria-label="Menú principal">
 
-                <a href="../index.html" class="marca" aria-label="SmartMeal - Inicio">
+                <a href="../index.html" class="marca">
 
                     <span class="marca-icono">
                         <i class="bi bi-heart-pulse-fill"></i>
@@ -52,8 +50,11 @@
 
                 </a>
 
-                <button class="menu-toggle" type="button" aria-label="Abrir menú"
-                    aria-controls="menu-principal" aria-expanded="false">
+                <button class="menu-toggle"
+                        type="button"
+                        aria-label="Abrir menú"
+                        aria-controls="menu-principal"
+                        aria-expanded="false">
 
                     <i class="bi bi-list"></i>
 
@@ -61,11 +62,34 @@
 
                 <ul class="nav-links" id="menu-principal">
 
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="recetas.html">Recetas</a></li>
-                    <li><a class="nav-activo" href="alimentos.html">Mis alimentos</a></li>
-                    <li><a href="planes.html">Planes</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li>
+                        <a href="../index.html">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="recetas.html">Recetas</a>
+                    </li>
+
+                    <li>
+                        <a href="alimentos.html" class="nav-activo">
+                            Mis alimentos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="planes.html">Planes</a>
+                    </li>
+
+                    <li>
+                        <a href="compras.html">
+                            <i class="bi bi-cart3"></i>
+                            Voy de compras
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contacto.html">Contacto</a>
+                    </li>
 
                 </ul>
 
@@ -75,17 +99,19 @@
 
     </header>
 
+
     <!-- ================= CONTENIDO ================= -->
 
     <main id="contenido-principal">
 
-        <!-- ENCABEZADO -->
+        <!-- PRESENTACIÓN -->
 
         <section class="encabezado-pagina">
 
             <div class="contenedor">
 
-                <nav class="migas-pan" aria-label="Ruta de navegación">
+                <nav class="migas-pan"
+                     aria-label="Ruta de navegación">
 
                     <a href="../index.html">Inicio</a>
 
@@ -96,543 +122,367 @@
                 </nav>
 
                 <span class="etiqueta">
-                    <i class="bi bi-basket2-fill"></i>
-                    Inventario de cocina
+                    <i class="bi bi-refrigerator"></i>
+                    Inventario inteligente
                 </span>
 
-                <h1>
-                    Organizá los alimentos que tenés en casa
-                </h1>
+                <h1>Organizá los alimentos de tu hogar</h1>
 
                 <p>
-                    Registrá tus productos, revisá qué está por vencerse y
-                    aprovechá mejor cada ingrediente en tus próximas comidas.
+                    Registrá los alimentos que tenés,
+                    controlá sus cantidades y consultá
+                    sus fechas de vencimiento.
                 </p>
 
             </div>
 
         </section>
 
-        <!-- RESUMEN -->
 
-        <section class="seccion resumen-inventario">
+        <!-- REGISTRAR ALIMENTO -->
 
-            <div class="contenedor">
-
-                <div class="grid-resumen">
-
-                    <article class="tarjeta-resumen">
-
-                        <div class="resumen-icono resumen-verde">
-
-                            <i class="bi bi-basket2-fill"></i>
-
-                        </div>
-
-                        <div>
-
-                            <span>Total de alimentos</span>
-
-                            <strong>24</strong>
-
-                        </div>
-
-                    </article>
-
-                    <article class="tarjeta-resumen">
-
-                        <div class="resumen-icono resumen-naranja">
-
-                            <i class="bi bi-exclamation-triangle-fill"></i>
-
-                        </div>
-
-                        <div>
-
-                            <span>Por vencer pronto</span>
-
-                            <strong>3</strong>
-
-                        </div>
-
-                    </article>
-
-                    <article class="tarjeta-resumen">
-
-                        <div class="resumen-icono resumen-azul">
-
-                            <i class="bi bi-grid-3x3-gap-fill"></i>
-
-                        </div>
-
-                        <div>
-
-                            <span>Categorías activas</span>
-
-                            <strong>5</strong>
-
-                        </div>
-
-                    </article>
-
-                    <article class="tarjeta-resumen">
-
-                        <div class="resumen-icono resumen-violeta">
-
-                            <i class="bi bi-lightbulb-fill"></i>
-
-                        </div>
-
-                        <div>
-
-                            <span>Recetas sugeridas</span>
-
-                            <strong>8</strong>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- INVENTARIO -->
-
-        <section class="seccion inventario">
+        <section class="seccion compras-seccion">
 
             <div class="contenedor">
 
-                <div class="cabecera-inventario">
-
-                    <div>
-
-                        <span class="subtitulo-seccion">
-                            Tu cocina
-                        </span>
-
-                        <h2>Alimentos disponibles</h2>
-
-                    </div>
-
-                    <button class="boton-agregar" type="button">
-
-                        <i class="bi bi-plus-lg"></i>
-
-                        Agregar alimento
-
-                    </button>
-
-                </div>
-
-                <div class="barra-inventario">
-
-                    <div class="buscador-inventario">
-
-                        <i class="bi bi-search"></i>
-
-                        <input
-                            type="search"
-                            name="buscar-alimento"
-                            placeholder="Buscar un alimento..."
-                            aria-label="Buscar un alimento"
-                        >
-
-                    </div>
-
-                    <div class="filtros-categoria">
-
-                        <button class="filtro-activo" type="button">
-                            Todos
-                        </button>
-
-                        <button type="button">
-                            Frutas
-                        </button>
-
-                        <button type="button">
-                            Verduras
-                        </button>
-
-                        <button type="button">
-                            Lácteos
-                        </button>
-
-                        <button type="button">
-                            Proteínas
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <div class="grid-alimentos">
-
-                    <!-- ALIMENTO 1 -->
-
-                    <article class="card-alimento">
-
-                        <div class="alimento-icono alimento-fruta">
-
-                            <i class="bi bi-apple"></i>
-
-                        </div>
-
-                        <div class="alimento-info">
-
-                            <div class="alimento-titulo">
-
-                                <h3>Manzanas rojas</h3>
-
-                                <span class="estado-bueno">
-                                    Disponible
-                                </span>
-
-                            </div>
-
-                            <p>Frutas · Heladera</p>
-
-                            <div class="alimento-detalles">
-
-                                <span>
-                                    <i class="bi bi-box-seam"></i>
-                                    6 unidades
-                                </span>
-
-                                <span>
-                                    <i class="bi bi-calendar3"></i>
-                                    Vence: 10 jul.
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                        <button class="boton-opciones" type="button"
-                            aria-label="Opciones de manzanas rojas">
-
-                            <i class="bi bi-three-dots-vertical"></i>
-
-                        </button>
-
-                    </article>
-
-                    <!-- ALIMENTO 2 -->
-
-                    <article class="card-alimento">
-
-                        <div class="alimento-icono alimento-verdura">
-
-                            <i class="bi bi-flower1"></i>
-
-                        </div>
-
-                        <div class="alimento-info">
-
-                            <div class="alimento-titulo">
-
-                                <h3>Espinaca</h3>
-
-                                <span class="estado-pronto">
-                                    Vence pronto
-                                </span>
-
-                            </div>
-
-                            <p>Verduras · Heladera</p>
-
-                            <div class="alimento-detalles">
-
-                                <span>
-                                    <i class="bi bi-box-seam"></i>
-                                    1 paquete
-                                </span>
-
-                                <span>
-                                    <i class="bi bi-calendar3"></i>
-                                    Vence: 04 jul.
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                        <button class="boton-opciones" type="button"
-                            aria-label="Opciones de espinaca">
-
-                            <i class="bi bi-three-dots-vertical"></i>
-
-                        </button>
-
-                    </article>
-
-                    <!-- ALIMENTO 3 -->
-
-                    <article class="card-alimento">
-
-                        <div class="alimento-icono alimento-lacteo">
-
-                            <i class="bi bi-cup-straw"></i>
-
-                        </div>
-
-                        <div class="alimento-info">
-
-                            <div class="alimento-titulo">
-
-                                <h3>Yogur natural</h3>
-
-                                <span class="estado-bueno">
-                                    Disponible
-                                </span>
-
-                            </div>
-
-                            <p>Lácteos · Heladera</p>
-
-                            <div class="alimento-detalles">
-
-                                <span>
-                                    <i class="bi bi-box-seam"></i>
-                                    2 potes
-                                </span>
-
-                                <span>
-                                    <i class="bi bi-calendar3"></i>
-                                    Vence: 12 jul.
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                        <button class="boton-opciones" type="button"
-                            aria-label="Opciones de yogur natural">
-
-                            <i class="bi bi-three-dots-vertical"></i>
-
-                        </button>
-
-                    </article>
-
-                    <!-- ALIMENTO 4 -->
-
-                    <article class="card-alimento">
-
-                        <div class="alimento-icono alimento-proteina">
-
-                            <i class="bi bi-egg-fried"></i>
-
-                        </div>
-
-                        <div class="alimento-info">
-
-                            <div class="alimento-titulo">
-
-                                <h3>Huevos</h3>
-
-                                <span class="estado-bueno">
-                                    Disponible
-                                </span>
-
-                            </div>
-
-                            <p>Proteínas · Heladera</p>
-
-                            <div class="alimento-detalles">
-
-                                <span>
-                                    <i class="bi bi-box-seam"></i>
-                                    10 unidades
-                                </span>
-
-                                <span>
-                                    <i class="bi bi-calendar3"></i>
-                                    Vence: 14 jul.
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                        <button class="boton-opciones" type="button"
-                            aria-label="Opciones de huevos">
-
-                            <i class="bi bi-three-dots-vertical"></i>
-
-                        </button>
-
-                    </article>
-
-                    <!-- ALIMENTO 5 -->
-
-                    <article class="card-alimento">
-
-                        <div class="alimento-icono alimento-grano">
-
-                            <i class="bi bi-circle-fill"></i>
-
-                        </div>
-
-                        <div class="alimento-info">
-
-                            <div class="alimento-titulo">
-
-                                <h3>Arroz integral</h3>
-
-                                <span class="estado-bajo">
-                                    Stock bajo
-                                </span>
-
-                            </div>
-
-                            <p>Almacén · Despensa</p>
-
-                            <div class="alimento-detalles">
-
-                                <span>
-                                    <i class="bi bi-box-seam"></i>
-                                    250 g
-                                </span>
-
-                                <span>
-                                    <i class="bi bi-calendar3"></i>
-                                    Vence: 28 ago.
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                        <button class="boton-opciones" type="button"
-                            aria-label="Opciones de arroz integral">
-
-                            <i class="bi bi-three-dots-vertical"></i>
-
-                        </button>
-
-                    </article>
-
-                    <!-- ALIMENTO 6 -->
-
-                    <article class="card-alimento">
-
-                        <div class="alimento-icono alimento-verdura">
-
-                            <i class="bi bi-brightness-high-fill"></i>
-
-                        </div>
-
-                        <div class="alimento-info">
-
-                            <div class="alimento-titulo">
-
-                                <h3>Tomates</h3>
-
-                                <span class="estado-pronto">
-                                    Vence pronto
-                                </span>
-
-                            </div>
-
-                            <p>Verduras · Heladera</p>
-
-                            <div class="alimento-detalles">
-
-                                <span>
-                                    <i class="bi bi-box-seam"></i>
-                                    4 unidades
-                                </span>
-
-                                <span>
-                                    <i class="bi bi-calendar3"></i>
-                                    Vence: 05 jul.
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                        <button class="boton-opciones" type="button"
-                            aria-label="Opciones de tomates">
-
-                            <i class="bi bi-three-dots-vertical"></i>
-
-                        </button>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- ALERTAS Y RECETAS -->
-
-        <section class="seccion seccion-alertas">
-
-            <div class="contenedor grid-alertas">
-
-                <article class="alerta-vencimiento">
-
-                    <div class="alerta-icono">
-
-                        <i class="bi bi-exclamation-triangle-fill"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span class="subtitulo-seccion">
-                            Atención
-                        </span>
-
-                        <h2>Tenés alimentos que vencen pronto</h2>
-
-                        <p>
-                            Usá la espinaca y los tomates durante los próximos
-                            días para evitar desperdicios.
-                        </p>
-
-                        <a href="recetas.html#ensalada-completa">
-                            Ver recetas sugeridas
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </article>
-
-                <article class="sugerencia-receta">
+                <div class="encabezado-seccion">
 
                     <span class="subtitulo-seccion">
-                        Sugerencia SmartMeal
+                        Tu inventario
                     </span>
 
-                    <h2>Podés preparar una tortilla de verduras</h2>
+                    <h2>Administrá tus alimentos</h2>
 
                     <p>
-                        Tenés huevos, espinaca y tomates: ingredientes ideales
-                        para una comida práctica y casera.
+                        Agregá tus productos para mantener
+                        actualizado lo que tenés disponible.
                     </p>
 
-                    <a href="recetas.html#tortilla-verduras" class="boton boton-principal">
+                </div>
 
-                        Ver receta
-                        <i class="bi bi-arrow-right"></i>
+                <div class="compras-layout">
 
-                    </a>
+                    <!-- FORMULARIO -->
 
-                </article>
+                    <article class="compras-panel">
+
+                        <div class="compras-panel-titulo">
+
+                            <i class="bi bi-plus-circle-fill"></i>
+
+                            <h3 id="titulo-form-alimento">
+                                Agregar alimento
+                            </h3>
+
+                        </div>
+
+                        <form id="form-alimento">
+
+                            <!-- Se utiliza cuando editamos -->
+                            <input type="hidden" id="alimento-id">
+
+                            <div class="compras-campo">
+
+                                <label for="alimento-nombre">
+                                    Nombre del alimento
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="alimento-nombre"
+                                    placeholder="Ej.: Leche"
+                                    maxlength="120"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="compras-campo">
+
+                                <label for="alimento-categoria">
+                                    Categoría
+                                </label>
+
+                                <select id="alimento-categoria" required>
+
+                                    <option value="">
+                                        Seleccioná una categoría
+                                    </option>
+
+                                    <option value="Frutas">
+                                        Frutas
+                                    </option>
+
+                                    <option value="Verduras">
+                                        Verduras
+                                    </option>
+
+                                    <option value="Lácteos">
+                                        Lácteos
+                                    </option>
+
+                                    <option value="Proteínas">
+                                        Proteínas
+                                    </option>
+
+                                    <option value="Otros">
+                                        Otros
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="compras-fila">
+
+                                <div class="compras-campo">
+
+                                    <label for="alimento-cantidad">
+                                        Cantidad
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="alimento-cantidad"
+                                        min="0.01"
+                                        step="0.01"
+                                        value="1"
+                                        required
+                                    >
+
+                                </div>
+
+                                <div class="compras-campo">
+
+                                    <label for="alimento-unidad">
+                                        Unidad
+                                    </label>
+
+                                    <select id="alimento-unidad">
+
+                                        <option value="unidad">
+                                            Unidad
+                                        </option>
+
+                                        <option value="kg">
+                                            Kilogramos
+                                        </option>
+
+                                        <option value="g">
+                                            Gramos
+                                        </option>
+
+                                        <option value="litro">
+                                            Litros
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                            <div class="compras-campo">
+
+                                <label for="alimento-vencimiento">
+                                    Fecha de vencimiento
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="alimento-vencimiento"
+                                >
+
+                                <small>
+                                    Es opcional. Podés dejarla
+                                    vacía si no corresponde.
+                                </small>
+
+                            </div>
+
+                            <button
+                                class="boton boton-principal compras-boton"
+                                type="submit"
+                                id="boton-guardar-alimento">
+
+                                <i class="bi bi-check-circle-fill"></i>
+
+                                Guardar alimento
+
+                            </button>
+
+                            <button
+                                class="historial-eliminar"
+                                type="button"
+                                id="boton-cancelar-edicion"
+                                hidden>
+
+                                Cancelar edición
+
+                            </button>
+
+                            <p id="mensaje-alimento"
+                               class="compras-mensaje"
+                               role="status"
+                               aria-live="polite">
+                            </p>
+
+                        </form>
+
+                    </article>
+
+
+                    <!-- ESTADO DEL INVENTARIO -->
+
+                    <article class="compras-panel">
+
+                        <div class="compras-panel-titulo">
+
+                            <i class="bi bi-clipboard-data-fill"></i>
+
+                            <h3>Resumen del inventario</h3>
+
+                        </div>
+
+                        <div class="compras-total">
+
+                            <span>Alimentos registrados</span>
+
+                            <strong id="total-alimentos">0</strong>
+
+                        </div>
+
+                        <div class="compras-total">
+
+                            <span>Próximos a vencer</span>
+
+                            <strong id="total-por-vencer">0</strong>
+
+                        </div>
+
+                        <div class="compras-total">
+
+                            <span>Alimentos vencidos</span>
+
+                            <strong id="total-vencidos">0</strong>
+
+                        </div>
+
+                        <p class="compras-vacio">
+
+                            <i class="bi bi-lightbulb"></i>
+
+                            Consejo: registrar las fechas
+                            de vencimiento puede ayudarte
+                            a aprovechar mejor los alimentos
+                            y reducir desperdicios.
+
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INVENTARIO ================= -->
+
+        <section class="seccion compras-historial"
+                 id="inventario">
+
+            <div class="contenedor">
+
+                <div class="encabezado-seccion">
+
+                    <span class="subtitulo-seccion">
+                        Alimentos disponibles
+                    </span>
+
+                    <h2>Mi inventario</h2>
+
+                    <p>
+                        Buscá, consultá y actualizá
+                        los alimentos que tenés registrados.
+                    </p>
+
+                </div>
+
+                <!-- BUSCADOR Y FILTROS -->
+
+                <div class="compras-panel">
+
+                    <div class="compras-fila">
+
+                        <div class="compras-campo">
+
+                            <label for="buscar-alimento">
+                                Buscar alimento
+                            </label>
+
+                            <input
+                                type="search"
+                                id="buscar-alimento"
+                                placeholder="Ej.: Leche, arroz, tomate..."
+                            >
+
+                        </div>
+
+                        <div class="compras-campo">
+
+                            <label for="filtrar-categoria">
+                                Filtrar por categoría
+                            </label>
+
+                            <select id="filtrar-categoria">
+
+                                <option value="Todas">
+                                    Todas las categorías
+                                </option>
+
+                                <option value="Frutas">Frutas</option>
+
+                                <option value="Verduras">Verduras</option>
+
+                                <option value="Lácteos">Lácteos</option>
+
+                                <option value="Proteínas">Proteínas</option>
+
+                                <option value="Otros">Otros</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ALIMENTOS DESDE SQLITE -->
+
+                <div id="lista-alimentos"
+                     style="display:grid;gap:18px;margin-top:24px;">
+
+                    <p class="compras-vacio">
+                        Cargando inventario...
+                    </p>
+
+                </div>
+
+                <p id="mensaje-inventario"
+                   class="compras-mensaje"
+                   role="status"
+                   aria-live="polite">
+                </p>
 
             </div>
 
         </section>
 
     </main>
+
 
     <!-- ================= FOOTER ================= -->
 
@@ -655,8 +505,8 @@
                 </a>
 
                 <p>
-                    Organiza mejor tus alimentos, aprovechá lo que ya tenés
-                    y planificá comidas más simples.
+                    Organizá tus alimentos, controlá tus compras
+                    y planificá mejor tus comidas.
                 </p>
 
             </div>
@@ -666,10 +516,23 @@
                 <h3>Explorar</h3>
 
                 <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="recetas.html">Recetas</a></li>
-                    <li><a href="alimentos.html">Mis alimentos</a></li>
-                    <li><a href="planes.html">Planes</a></li>
+
+                    <li>
+                        <a href="../index.html">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="recetas.html">Recetas</a>
+                    </li>
+
+                    <li>
+                        <a href="planes.html">Planes</a>
+                    </li>
+
+                    <li>
+                        <a href="compras.html">Voy de compras</a>
+                    </li>
+
                 </ul>
 
             </div>
@@ -679,11 +542,8 @@
                 <h3>Contacto</h3>
 
                 <ul>
-                    <li><a href="contacto.html">Escribinos</a></li>
                     <li>
-                        <a href="mailto:contacto@smartmeal.com">
-                            contacto@smartmeal.com
-                        </a>
+                        <a href="contacto.html">Escribinos</a>
                     </li>
                     <li>Mendoza, Argentina</li>
                 </ul>
@@ -692,23 +552,13 @@
 
             <div class="footer-columna">
 
-                <h3>Seguinos</h3>
+                <h3>SmartMeal 2.0</h3>
 
-                <div class="redes-sociales">
-
-                    <a href="#" aria-label="Instagram">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-
-                    <a href="#" aria-label="Facebook">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-
-                    <a href="#" aria-label="Twitter">
-                        <i class="bi bi-twitter-x"></i>
-                    </a>
-
-                </div>
+                <p>
+                    Aplicación desarrollada con HTML,
+                    CSS, JavaScript, Python,
+                    Flask y SQLite.
+                </p>
 
             </div>
 
@@ -717,14 +567,20 @@
         <div class="footer-inferior">
 
             <p>
-                © 2026 SmartMeal · Proyecto académico de Desarrollo de Software.
+                © 2026 SmartMeal |
+                Práctica Profesionalizante I
             </p>
 
         </div>
 
     </footer>
 
+
+    <!-- JAVASCRIPT GENERAL -->
     <script src="../js/script.js"></script>
+
+    <!-- JAVASCRIPT DEL INVENTARIO -->
+    <script src="../js/alimentos.js"></script>
 
 </body>
 

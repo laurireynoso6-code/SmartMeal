@@ -1,0 +1,492 @@
+
+/* ==================================================
+   SMARTMEAL 2.0
+   ESTILOS DE VOY DE COMPRAS
+   Parcial N° 2 - Practica Profesionalizante I
+================================================== */
+
+/* =========================
+   SECCION DE COMPRAS
+========================= */
+
+.compras-seccion {
+    background: #f8fbf7;
+}
+
+.compras-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 28px;
+}
+
+/* =========================
+   PANELES
+========================= */
+
+.compras-panel {
+    padding: 32px;
+    border: 1px solid var(--borde);
+    border-radius: 24px;
+    background: var(--blanco);
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion);
+}
+
+.compras-panel:hover {
+    box-shadow: var(--sombra-media);
+}
+
+.compras-panel-titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.compras-panel-titulo > i {
+    width: 47px;
+    height: 47px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: var(--verde-claro);
+    color: var(--verde-oscuro);
+    font-size: 21px;
+}
+
+.compras-panel-titulo h3 {
+    color: var(--texto);
+    font-size: 21px;
+    font-weight: 700;
+}
+
+/* =========================
+   FORMULARIOS
+========================= */
+
+#form-producto,
+#form-compra {
+    display: grid;
+    gap: 20px;
+}
+
+.compras-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.compras-campo label {
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.compras-campo input,
+.compras-campo select {
+    width: 100%;
+    min-height: 49px;
+    padding: 12px 14px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    outline: none;
+    background: var(--blanco);
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 14px;
+    transition: var(--transicion);
+}
+
+.compras-campo input::placeholder {
+    color: #99a69c;
+}
+
+.compras-campo input:hover,
+.compras-campo select:hover {
+    border-color: var(--verde-principal);
+}
+
+.compras-campo input:focus,
+.compras-campo select:focus {
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.13);
+}
+
+.compras-campo select {
+    cursor: pointer;
+}
+
+.compras-campo small {
+    color: var(--texto-suave);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.compras-fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.compras-boton {
+    width: 100%;
+    min-height: 53px;
+    margin-top: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.compras-boton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================
+   LISTA DE PRODUCTOS
+========================= */
+
+.compras-productos {
+    margin-bottom: 22px;
+}
+
+#lista-productos {
+    display: grid;
+    gap: 12px;
+}
+
+.compras-vacio {
+    padding: 28px 18px;
+    border: 1px dashed #c7dcc9;
+    border-radius: 14px;
+    background: var(--verde-fondo);
+    color: var(--texto-suave);
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* Tarjetas que crearemos con JavaScript */
+
+.compras-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 15px;
+    border: 1px solid var(--borde);
+    border-radius: 13px;
+    background: var(--fondo);
+}
+
+.compras-item-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.compras-item-info strong {
+    display: block;
+    color: var(--texto);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.compras-item-info span {
+    display: block;
+    margin-top: 3px;
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.compras-item-precio {
+    color: var(--verde-oscuro);
+    font-size: 14px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.compras-eliminar {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 9px;
+    background: #ffe8e8;
+    color: #bb4545;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.compras-eliminar:hover {
+    background: #bb4545;
+    color: white;
+}
+
+/* =========================
+   TOTAL DE LA COMPRA
+========================= */
+
+.compras-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0 25px;
+    padding: 22px;
+    border: 1px solid #c8e9c8;
+    border-radius: 15px;
+    background: linear-gradient(
+        135deg,
+        #effbed,
+        #ddf5dd
+    );
+}
+
+.compras-total span {
+    color: var(--verde-oscuro);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.compras-total strong {
+    color: var(--verde-oscuro);
+    font-size: 27px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* =========================
+   PAGO COMBINADO
+========================= */
+
+.compras-combinado {
+    padding: 17px;
+    border: 1px solid #cbe8ce;
+    border-radius: 14px;
+    background: var(--verde-fondo);
+}
+
+/* Mantener oculto el campo hasta elegir
+   la opcion de pago combinado */
+
+.compras-combinado[hidden] {
+    display: none !important;
+}
+
+/* =========================
+   MENSAJES DEL SISTEMA
+========================= */
+
+.compras-mensaje {
+    min-height: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.compras-mensaje.exito {
+    color: var(--verde-oscuro);
+}
+
+.compras-mensaje.error {
+    color: #bc4141;
+}
+
+/* =========================
+   HISTORIAL DE COMPRAS
+========================= */
+
+.compras-historial {
+    background: var(--blanco);
+}
+
+#historial-compras {
+    display: grid;
+    gap: 20px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* Tarjetas que se completaran desde SQLite */
+
+.historial-tarjeta {
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    background: var(--blanco);
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion);
+}
+
+.historial-tarjeta:hover {
+    box-shadow: var(--sombra-media);
+    transform: translateY(-3px);
+}
+
+.historial-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 22px;
+    border-bottom: 1px solid var(--borde);
+    background: var(--fondo);
+}
+
+.historial-encabezado h3 {
+    color: var(--texto);
+    font-size: 19px;
+}
+
+.historial-encabezado p {
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.historial-total {
+    color: var(--verde-oscuro);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.historial-cuerpo {
+    padding: 22px;
+}
+
+.historial-detalles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-bottom: 18px;
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.historial-productos {
+    display: grid;
+    gap: 9px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.historial-productos li {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--borde);
+    color: var(--texto);
+    font-size: 13px;
+}
+
+.historial-productos li:last-child {
+    border-bottom: none;
+}
+
+.historial-acciones {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 22px 20px;
+}
+
+.historial-eliminar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border: 1px solid #f3caca;
+    border-radius: 11px;
+    background: #fff1f1;
+    color: #b53d3d;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.historial-eliminar:hover {
+    background: #b53d3d;
+    color: var(--blanco);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (min-width: 761px) and (max-width: 1060px) {
+    .nav-links a {
+        padding: 8px 9px;
+        font-size: 12px;
+    }
+
+    .compras-layout {
+        gap: 18px;
+    }
+
+    .compras-panel {
+        padding: 23px;
+    }
+}
+
+@media (max-width: 900px) {
+    .compras-layout {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .compras-panel {
+        padding: 23px;
+    }
+
+    .compras-panel-titulo h3 {
+        font-size: 19px;
+    }
+
+    .compras-total {
+        padding: 17px;
+    }
+
+    .compras-total strong {
+        font-size: 23px;
+    }
+
+    .historial-encabezado,
+    .historial-cuerpo {
+        padding: 18px;
+    }
+
+    .historial-productos li {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 420px) {
+    .compras-fila {
+        grid-template-columns: 1fr;
+    }
+
+    .compras-item {
+        flex-wrap: wrap;
+    }
+
+    .compras-item-precio {
+        margin-left: auto;
+    }
+
+    .compras-total {
+        flex-wrap: wrap;
+    }
+}

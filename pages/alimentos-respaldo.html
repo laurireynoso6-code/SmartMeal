@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Laureano Reynoso Ceccarini">
+    <meta name="description"
+        content="Inventario ficticio de alimentos disponibles en SmartMeal.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartMeal | Mis alimentos</title>
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Íconos -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#contenido-principal">
+        Ir al contenido principal
+    </a>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="contenedor">
+
+            <nav class="navbar" aria-label="Menú principal">
+
+                <a href="../index.html" class="marca" aria-label="SmartMeal - Inicio">
+
+                    <span class="marca-icono">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </span>
+
+                    <span class="marca-texto">
+                        Smart<span>Meal</span>
+                    </span>
+
+                </a>
+
+                <button class="menu-toggle" type="button" aria-label="Abrir menú"
+                    aria-controls="menu-principal" aria-expanded="false">
+
+                    <i class="bi bi-list"></i>
+
+                </button>
+
+                <ul class="nav-links" id="menu-principal">
+
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="recetas.html">Recetas</a></li>
+                    <li><a class="nav-activo" href="alimentos.html">Mis alimentos</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main id="contenido-principal">
+
+        <!-- ENCABEZADO -->
+
+        <section class="encabezado-pagina">
+
+            <div class="contenedor">
+
+                <nav class="migas-pan" aria-label="Ruta de navegación">
+
+                    <a href="../index.html">Inicio</a>
+
+                    <i class="bi bi-chevron-right"></i>
+
+                    <span>Mis alimentos</span>
+
+                </nav>
+
+                <span class="etiqueta">
+                    <i class="bi bi-basket2-fill"></i>
+                    Inventario de cocina
+                </span>
+
+                <h1>
+                    Organizá los alimentos que tenés en casa
+                </h1>
+
+                <p>
+                    Registrá tus productos, revisá qué está por vencerse y
+                    aprovechá mejor cada ingrediente en tus próximas comidas.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- RESUMEN -->
+
+        <section class="seccion resumen-inventario">
+
+            <div class="contenedor">
+
+                <div class="grid-resumen">
+
+                    <article class="tarjeta-resumen">
+
+                        <div class="resumen-icono resumen-verde">
+
+                            <i class="bi bi-basket2-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>Total de alimentos</span>
+
+                            <strong>24</strong>
+
+                        </div>
+
+                    </article>
+
+                    <article class="tarjeta-resumen">
+
+                        <div class="resumen-icono resumen-naranja">
+
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>Por vencer pronto</span>
+
+                            <strong>3</strong>
+
+                        </div>
+
+                    </article>
+
+                    <article class="tarjeta-resumen">
+
+                        <div class="resumen-icono resumen-azul">
+
+                            <i class="bi bi-grid-3x3-gap-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>Categorías activas</span>
+
+                            <strong>5</strong>
+
+                        </div>
+
+                    </article>
+
+                    <article class="tarjeta-resumen">
+
+                        <div class="resumen-icono resumen-violeta">
+
+                            <i class="bi bi-lightbulb-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>Recetas sugeridas</span>
+
+                            <strong>8</strong>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- INVENTARIO -->
+
+        <section class="seccion inventario">
+
+            <div class="contenedor">
+
+                <div class="cabecera-inventario">
+
+                    <div>
+
+                        <span class="subtitulo-seccion">
+                            Tu cocina
+                        </span>
+
+                        <h2>Alimentos disponibles</h2>
+
+                    </div>
+
+                    <button class="boton-agregar" type="button">
+
+                        <i class="bi bi-plus-lg"></i>
+
+                        Agregar alimento
+
+                    </button>
+
+                </div>
+
+                <div class="barra-inventario">
+
+                    <div class="buscador-inventario">
+
+                        <i class="bi bi-search"></i>
+
+                        <input
+                            type="search"
+                            name="buscar-alimento"
+                            placeholder="Buscar un alimento..."
+                            aria-label="Buscar un alimento"
+                        >
+
+                    </div>
+
+                    <div class="filtros-categoria">
+
+                        <button class="filtro-activo" type="button">
+                            Todos
+                        </button>
+
+                        <button type="button">
+                            Frutas
+                        </button>
+
+                        <button type="button">
+                            Verduras
+                        </button>
+
+                        <button type="button">
+                            Lácteos
+                        </button>
+
+                        <button type="button">
+                            Proteínas
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="grid-alimentos">
+
+                    <!-- ALIMENTO 1 -->
+
+                    <article class="card-alimento">
+
+                        <div class="alimento-icono alimento-fruta">
+
+                            <i class="bi bi-apple"></i>
+
+                        </div>
+
+                        <div class="alimento-info">
+
+                            <div class="alimento-titulo">
+
+                                <h3>Manzanas rojas</h3>
+
+                                <span class="estado-bueno">
+                                    Disponible
+                                </span>
+
+                            </div>
+
+                            <p>Frutas · Heladera</p>
+
+                            <div class="alimento-detalles">
+
+                                <span>
+                                    <i class="bi bi-box-seam"></i>
+                                    6 unidades
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Vence: 10 jul.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button class="boton-opciones" type="button"
+                            aria-label="Opciones de manzanas rojas">
+
+                            <i class="bi bi-three-dots-vertical"></i>
+
+                        </button>
+
+                    </article>
+
+                    <!-- ALIMENTO 2 -->
+
+                    <article class="card-alimento">
+
+                        <div class="alimento-icono alimento-verdura">
+
+                            <i class="bi bi-flower1"></i>
+
+                        </div>
+
+                        <div class="alimento-info">
+
+                            <div class="alimento-titulo">
+
+                                <h3>Espinaca</h3>
+
+                                <span class="estado-pronto">
+                                    Vence pronto
+                                </span>
+
+                            </div>
+
+                            <p>Verduras · Heladera</p>
+
+                            <div class="alimento-detalles">
+
+                                <span>
+                                    <i class="bi bi-box-seam"></i>
+                                    1 paquete
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Vence: 04 jul.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button class="boton-opciones" type="button"
+                            aria-label="Opciones de espinaca">
+
+                            <i class="bi bi-three-dots-vertical"></i>
+
+                        </button>
+
+                    </article>
+
+                    <!-- ALIMENTO 3 -->
+
+                    <article class="card-alimento">
+
+                        <div class="alimento-icono alimento-lacteo">
+
+                            <i class="bi bi-cup-straw"></i>
+
+                        </div>
+
+                        <div class="alimento-info">
+
+                            <div class="alimento-titulo">
+
+                                <h3>Yogur natural</h3>
+
+                                <span class="estado-bueno">
+                                    Disponible
+                                </span>
+
+                            </div>
+
+                            <p>Lácteos · Heladera</p>
+
+                            <div class="alimento-detalles">
+
+                                <span>
+                                    <i class="bi bi-box-seam"></i>
+                                    2 potes
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Vence: 12 jul.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button class="boton-opciones" type="button"
+                            aria-label="Opciones de yogur natural">
+
+                            <i class="bi bi-three-dots-vertical"></i>
+
+                        </button>
+
+                    </article>
+
+                    <!-- ALIMENTO 4 -->
+
+                    <article class="card-alimento">
+
+                        <div class="alimento-icono alimento-proteina">
+
+                            <i class="bi bi-egg-fried"></i>
+
+                        </div>
+
+                        <div class="alimento-info">
+
+                            <div class="alimento-titulo">
+
+                                <h3>Huevos</h3>
+
+                                <span class="estado-bueno">
+                                    Disponible
+                                </span>
+
+                            </div>
+
+                            <p>Proteínas · Heladera</p>
+
+                            <div class="alimento-detalles">
+
+                                <span>
+                                    <i class="bi bi-box-seam"></i>
+                                    10 unidades
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Vence: 14 jul.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button class="boton-opciones" type="button"
+                            aria-label="Opciones de huevos">
+
+                            <i class="bi bi-three-dots-vertical"></i>
+
+                        </button>
+
+                    </article>
+
+                    <!-- ALIMENTO 5 -->
+
+                    <article class="card-alimento">
+
+                        <div class="alimento-icono alimento-grano">
+
+                            <i class="bi bi-circle-fill"></i>
+
+                        </div>
+
+                        <div class="alimento-info">
+
+                            <div class="alimento-titulo">
+
+                                <h3>Arroz integral</h3>
+
+                                <span class="estado-bajo">
+                                    Stock bajo
+                                </span>
+
+                            </div>
+
+                            <p>Almacén · Despensa</p>
+
+                            <div class="alimento-detalles">
+
+                                <span>
+                                    <i class="bi bi-box-seam"></i>
+                                    250 g
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Vence: 28 ago.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button class="boton-opciones" type="button"
+                            aria-label="Opciones de arroz integral">
+
+                            <i class="bi bi-three-dots-vertical"></i>
+
+                        </button>
+
+                    </article>
+
+                    <!-- ALIMENTO 6 -->
+
+                    <article class="card-alimento">
+
+                        <div class="alimento-icono alimento-verdura">
+
+                            <i class="bi bi-brightness-high-fill"></i>
+
+                        </div>
+
+                        <div class="alimento-info">
+
+                            <div class="alimento-titulo">
+
+                                <h3>Tomates</h3>
+
+                                <span class="estado-pronto">
+                                    Vence pronto
+                                </span>
+
+                            </div>
+
+                            <p>Verduras · Heladera</p>
+
+                            <div class="alimento-detalles">
+
+                                <span>
+                                    <i class="bi bi-box-seam"></i>
+                                    4 unidades
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Vence: 05 jul.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button class="boton-opciones" type="button"
+                            aria-label="Opciones de tomates">
+
+                            <i class="bi bi-three-dots-vertical"></i>
+
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ALERTAS Y RECETAS -->
+
+        <section class="seccion seccion-alertas">
+
+            <div class="contenedor grid-alertas">
+
+                <article class="alerta-vencimiento">
+
+                    <div class="alerta-icono">
+
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span class="subtitulo-seccion">
+                            Atención
+                        </span>
+
+                        <h2>Tenés alimentos que vencen pronto</h2>
+
+                        <p>
+                            Usá la espinaca y los tomates durante los próximos
+                            días para evitar desperdicios.
+                        </p>
+
+                        <a href="recetas.html#ensalada-completa">
+                            Ver recetas sugeridas
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article class="sugerencia-receta">
+
+                    <span class="subtitulo-seccion">
+                        Sugerencia SmartMeal
+                    </span>
+
+                    <h2>Podés preparar una tortilla de verduras</h2>
+
+                    <p>
+                        Tenés huevos, espinaca y tomates: ingredientes ideales
+                        para una comida práctica y casera.
+                    </p>
+
+                    <a href="recetas.html#tortilla-verduras" class="boton boton-principal">
+
+                        Ver receta
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="contenedor footer-grid">
+
+            <div class="footer-marca">
+
+                <a href="../index.html" class="marca">
+
+                    <span class="marca-icono">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </span>
+
+                    <span class="marca-texto">
+                        Smart<span>Meal</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Organiza mejor tus alimentos, aprovechá lo que ya tenés
+                    y planificá comidas más simples.
+                </p>
+
+            </div>
+
+            <div class="footer-columna">
+
+                <h3>Explorar</h3>
+
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="recetas.html">Recetas</a></li>
+                    <li><a href="alimentos.html">Mis alimentos</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-columna">
+
+                <h3>Contacto</h3>
+
+                <ul>
+                    <li><a href="contacto.html">Escribinos</a></li>
+                    <li>
+                        <a href="mailto:contacto@smartmeal.com">
+                            contacto@smartmeal.com
+                        </a>
+                    </li>
+                    <li>Mendoza, Argentina</li>
+                </ul>
+
+            </div>
+
+            <div class="footer-columna">
+
+                <h3>Seguinos</h3>
+
+                <div class="redes-sociales">
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="Twitter">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-inferior">
+
+            <p>
+                © 2026 SmartMeal · Proyecto académico de Desarrollo de Software.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Laureano Reynoso Ceccarini">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Registrá tus compras y administrá tus gastos con SmartMeal.">
+
+    <title>SmartMeal | Voy de compras</title>
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/compras.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="contenedor">
+
+            <nav class="navbar" aria-label="Menú principal">
+
+                <a href="../index.html" class="marca">
+
+                    <span class="marca-icono">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </span>
+
+                    <span class="marca-texto">
+                        Smart<span>Meal</span>
+                    </span>
+
+                </a>
+
+                <button class="menu-toggle" type="button"
+                    aria-label="Abrir menú"
+                    aria-controls="menu-principal"
+                    aria-expanded="false">
+
+                    <i class="bi bi-list"></i>
+
+                </button>
+
+                <ul class="nav-links" id="menu-principal">
+
+                    <li>
+                        <a href="../index.html">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="recetas.html">Recetas</a>
+                    </li>
+
+                    <li>
+                        <a href="alimentos.html">Mis alimentos</a>
+                    </li>
+
+                    <li>
+                        <a href="planes.html">Planes</a>
+                    </li>
+
+                    <li>
+                        <a class="nav-activo" href="compras.html">
+                            <i class="bi bi-cart3"></i>
+                            Voy de compras
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contacto.html">Contacto</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main id="contenido-principal">
+
+        <!-- ENCABEZADO -->
+
+        <section class="encabezado-pagina">
+
+            <div class="contenedor">
+
+                <nav class="migas-pan"
+                    aria-label="Ruta de navegación">
+
+                    <a href="../index.html">Inicio</a>
+
+                    <i class="bi bi-chevron-right"></i>
+
+                    <span>Voy de compras</span>
+
+                </nav>
+
+                <span class="etiqueta">
+                    <i class="bi bi-cart3"></i>
+                    Organizador de compras
+                </span>
+
+                <h1>Comprá mejor. Controlá tus gastos.</h1>
+
+                <p>
+                    Registrá los productos que comprás,
+                    calculá tus gastos y consultá
+                    tu historial cuando lo necesites.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ================= NUEVA COMPRA ================= -->
+
+        <section class="seccion compras-seccion">
+
+            <div class="contenedor">
+
+                <div class="encabezado-seccion">
+
+                    <span class="subtitulo-seccion">
+                        Administrá tus compras
+                    </span>
+
+                    <h2>Registrá una nueva compra</h2>
+
+                    <p>
+                        Completá los datos de los productos
+                        y guardá el resumen de tu compra.
+                    </p>
+
+                </div>
+
+                <div class="compras-layout">
+
+                    <!-- FORMULARIO DE PRODUCTOS -->
+
+                    <article class="compras-panel">
+
+                        <div class="compras-panel-titulo">
+
+                            <i class="bi bi-basket2-fill"></i>
+
+                            <h3>Agregar productos</h3>
+
+                        </div>
+
+                        <form id="form-producto">
+
+                            <div class="compras-campo">
+
+                                <label for="producto-nombre">
+                                    Nombre del producto
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="producto-nombre"
+                                    placeholder="Ej.: Manzanas"
+                                    maxlength="120"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="compras-fila">
+
+                                <div class="compras-campo">
+
+                                    <label for="producto-cantidad">
+                                        Cantidad
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="producto-cantidad"
+                                        min="0.01"
+                                        step="0.01"
+                                        value="1"
+                                        required
+                                    >
+
+                                </div>
+
+                                <div class="compras-campo">
+
+                                    <label for="producto-unidad">
+                                        Unidad
+                                    </label>
+
+                                    <select id="producto-unidad">
+
+                                        <option value="unidad">
+                                            Unidad
+                                        </option>
+
+                                        <option value="kg">
+                                            Kilogramos
+                                        </option>
+
+                                        <option value="g">
+                                            Gramos
+                                        </option>
+
+                                        <option value="litro">
+                                            Litros
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                            <div class="compras-campo">
+
+                                <label for="producto-precio">
+                                    Precio por unidad o medida ($)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="producto-precio"
+                                    placeholder="Ej.: 1500"
+                                    min="0.01"
+                                    step="0.01"
+                                    required
+                                >
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="boton boton-principal compras-boton">
+
+                                <i class="bi bi-plus-lg"></i>
+
+                                Agregar producto
+
+                            </button>
+
+                        </form>
+
+                    </article>
+
+                    <!-- RESUMEN DE LA COMPRA -->
+
+                    <article class="compras-panel">
+
+                        <div class="compras-panel-titulo">
+
+                            <i class="bi bi-receipt"></i>
+
+                            <h3>Resumen de compra</h3>
+
+                        </div>
+
+                        <div class="compras-productos">
+
+                            <div id="lista-productos">
+
+                                <p class="compras-vacio">
+                                    Todavía no agregaste productos.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="compras-total">
+
+                            <span>Total de compra</span>
+
+                            <strong id="total-compra">
+                                $0,00
+                            </strong>
+
+                        </div>
+
+                        <!-- DATOS DE LA COMPRA -->
+
+                        <form id="form-compra">
+
+                            <div class="compras-campo">
+
+                                <label for="compra-comercio">
+                                    Comercio
+                                </label>
+
+                                <select
+                                    id="compra-comercio"
+                                    required>
+
+                                    <option value="">
+                                        Seleccioná el comercio
+                                    </option>
+
+                                    <option value="Supermercado">
+                                        Supermercado
+                                    </option>
+
+                                    <option value="Verdulería">
+                                        Verdulería
+                                    </option>
+
+                                    <option value="Carnicería">
+                                        Carnicería
+                                    </option>
+
+                                    <option value="Otros">
+                                        Otros
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="compras-campo">
+
+                                <label for="compra-pago">
+                                    Medio de pago
+                                </label>
+
+                                <select
+                                    id="compra-pago"
+                                    required>
+
+                                    <option value="">
+                                        Seleccioná un medio de pago
+                                    </option>
+
+                                    <option value="Efectivo">
+                                        Efectivo
+                                    </option>
+
+                                    <option value="Tarjeta/Mercado Pago">
+                                        Tarjeta / Mercado Pago
+                                    </option>
+
+                                    <option value="Combinado">
+                                        Pago combinado
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- SOLO PARA PAGO COMBINADO -->
+
+                            <div class="compras-campo compras-combinado"
+                                id="campo-pago-combinado"
+                                hidden>
+
+                                <label for="monto-efectivo">
+                                    ¿Cuánto pagaste en efectivo?
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="monto-efectivo"
+                                    min="0.01"
+                                    step="0.01"
+                                    placeholder="Ej.: 3000"
+                                >
+
+                                <small>
+                                    El resto se abonará con tarjeta
+                                    o Mercado Pago.
+                                </small>
+
+                            </div>
+
+                            <button
+                                class="boton boton-principal compras-boton"
+                                id="boton-guardar-compra"
+                                type="submit">
+
+                                <i class="bi bi-check-circle-fill"></i>
+
+                                Guardar mi compra
+
+                            </button>
+
+                            <p
+                                id="mensaje-compra"
+                                class="compras-mensaje"
+                                role="status"
+                                aria-live="polite">
+                            </p>
+
+                        </form>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= HISTORIAL ================= -->
+
+        <section class="seccion compras-historial"
+            id="mis-compras">
+
+            <div class="contenedor">
+
+                <div class="encabezado-seccion">
+
+                    <span class="subtitulo-seccion">
+                        Historial
+                    </span>
+
+                    <h2>Mis compras</h2>
+
+                    <p>
+                        Consultá los productos y los importes
+                        de tus compras anteriores.
+                    </p>
+
+                </div>
+
+                <div id="historial-compras">
+
+                    <p class="compras-vacio">
+                        Todavía no hay compras registradas.
+                    </p>
+
+                </div>
+
+                <p id="mensaje-historial"
+                    class="compras-mensaje"
+                    role="status"
+                    aria-live="polite">
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="contenedor footer-grid">
+
+            <div class="footer-marca">
+
+                <a href="../index.html" class="marca">
+
+                    <span class="marca-icono">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </span>
+
+                    <span class="marca-texto">
+                        Smart<span>Meal</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Organizá tus alimentos,
+                    aprovechá mejor tus compras
+                    y planificá tus comidas.
+                </p>
+
+            </div>
+
+            <div class="footer-columna">
+
+                <h3>Explorar</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="../index.html">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="recetas.html">Recetas</a>
+                    </li>
+
+                    <li>
+                        <a href="alimentos.html">Mis alimentos</a>
+                    </li>
+
+                    <li>
+                        <a href="planes.html">Planes</a>
+                    </li>
+
+                    <li>
+                        <a href="compras.html">Voy de compras</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-columna">
+
+                <h3>Contacto</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="contacto.html">Escribinos</a>
+                    </li>
+
+                    <li>Mendoza, Argentina</li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-columna">
+
+                <h3>SmartMeal 2.0</h3>
+
+                <p>
+                    Proyecto académico desarrollado
+                    con HTML, CSS, JavaScript,
+                    Python, Flask y SQLite.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-inferior">
+
+            <p>
+                © 2026 SmartMeal |
+                Práctica Profesionalizante I
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- JavaScript del menú -->
+    <script src="../js/script.js"></script>
+
+    <!-- JavaScript exclusivo de compras -->
+    <script src="../js/compras.js"></script>
+
+</body>
+
+</html>

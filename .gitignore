@@ -1,0 +1,21 @@
+
+# Entorno virtual de Python
+.venv/
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+
+# Base de datos local
+datos/*.db
+datos/*.db-shm
+datos/*.db-wal
+
+# Archivos de configuración privada
+.env
+.env.*
+!.env.example
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
